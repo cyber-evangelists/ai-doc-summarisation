@@ -1,0 +1,6 @@
+python-decouple
+fastapi
+uvicorn
+openai
+PyPDF2
+typing
