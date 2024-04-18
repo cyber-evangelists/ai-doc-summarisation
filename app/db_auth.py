@@ -27,4 +27,3 @@ def check_password(user,user_data):
     return {
         "error": "Wrong login details!"
     }
-    
