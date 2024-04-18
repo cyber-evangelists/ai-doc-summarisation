@@ -1,4 +1,3 @@
 # main.py
 
-It serves as the entry point of the application, the endpoint takes up a pdf file and extracts the
-text from the file.
+It serves as the entry point of the application, there are 3 endpoints in this file 

@@ -11,6 +11,7 @@ db = mongo_client['openAI_PDF']
 users_collection = db["users"]
 
 def create_user_in_db(user_data):
+    user_data['credits'] = 3
     hashed_password = bcrypt.hashpw(user_data['password'].encode('utf-8'), bcrypt.gensalt())
     user_data['password'] = hashed_password.decode('utf-8')
     users_collection.insert_one(user_data)
@@ -27,5 +28,3 @@ def check_password(user,user_data):
         "error": "Wrong login details!"
     }
     
-
-
