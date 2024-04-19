@@ -24,5 +24,10 @@ def update_credit(mail):
            return("You doont have enough credits")
     else:
         return False
-    
+
+def get_credits(mail):
+    user = users_collection.find_one({"email": mail})  
+    if user:
+        current_credits = user.get("credits", 0) 
+        return current_credits
     

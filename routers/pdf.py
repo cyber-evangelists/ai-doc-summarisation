@@ -10,9 +10,8 @@ import shutil
 pdf_router = APIRouter()
 
 @pdf_router.post("/summarize", dependencies=[Depends(JWTBearer())], tags=["Summarize PDFs"])
-async def upload_pdf(files: List[UploadFile] = File(...), mail: str = Depends(get_current_user)):
-
-    if check_credits(mail):
+async def upload_pdf(files: List[UploadFile] = File(...),mail: str = Depends(get_current_user)):
+     if check_credits(mail):
         upload_dir = Path("temp")
         upload_dir.mkdir(parents=True, exist_ok=True)
         try: 
@@ -31,5 +30,5 @@ async def upload_pdf(files: List[UploadFile] = File(...), mail: str = Depends(ge
         except Exception as e:
             shutil.rmtree(upload_dir, ignore_errors=True)
             return {"error": str(e)}
-    else:
+     else:
         return {"error": "You don't have enough credits to process this file"}
