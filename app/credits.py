@@ -21,7 +21,7 @@ def update_credit(mail):
             new_credits = current_credits - 1
             users_collection.update_one({"email": mail}, {"$set": {"credits": new_credits}})
         else:
-           return("You doont have enough credits")
+           return("You dont have enough credits")
     else:
         return False
 

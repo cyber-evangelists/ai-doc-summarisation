@@ -1,6 +1,12 @@
 # Main.py
 
-It serves as the entry point of the application, there are 3 endpoints in this project.
+It serves as the entry point of the application, there are 4 endpoints in this project.
+1) /login
+2) /signup
+3) /credits
+4) /summarize
+
+User data has been saved in Mongodb
 
 # Login 
 For login purpose
@@ -23,6 +29,9 @@ This enpoint is used to fetch the remaining credits of every user. Through the j
 
 # How to run the project
 
+-> You should have Mongodb Server installed in the system
+
 pip install -r requirements.txt
 
 uvicorn main:app --reload
+
