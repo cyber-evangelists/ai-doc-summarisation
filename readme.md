@@ -25,13 +25,29 @@ This endpoint is protected through JWT-Auth, so its only accessible to registere
 
 # How does credits work
 
-This enpoint is used to fetch the remaining credits of every user. Through the jwt it identifies a user and then fetch user credits.
+This enpoint is used to fetch the remaining credits of every user. Through the jwt it identifies a user and then fetch user credits. Each user is awarded 3 credits so he is able to summarize 3 pdf documents for free
 
-# How to run the project
 
+## Environment Variables
+
+Create a .env file in the root and  follow .env.example to add all the environmental variables in it.
+
+`API_KEY`
+
+`ANOTHER_API_KEY`
+
+
+
+## Deployment
 -> You should have Mongodb Server installed in the system
 
-pip install -r requirements.txt
+To deploy this project run
 
-uvicorn main:app --reload
+```bash
+  pip install -r requirements.txt
+  uvicorn main:app --reload
+
+```
+
+
 
