@@ -1,23 +1,10 @@
-from fastapi import FastAPI, File, UploadFile
-from PyPDF2 import PdfReader
-from typing import List
+from fastapi import FastAPI
+from routers.user import user_router
+from routers.pdf import pdf_router
+from routers.credits import credits
 
 app = FastAPI()
 
-def extract_text_from_pdf(pdf_path):
-    reader = PdfReader(pdf_path)
-    text = ""
-    for page in reader.pages:
-        text += page.extract_text()
-    return text
-
-@app.post("/upload/")
-async def upload_pdf(files: List[UploadFile] = File(...)):
-    texts = []
-    for uploaded_file in files:
-        contents = await uploaded_file.read()
-        with open(uploaded_file.filename, "wb") as f:
-            f.write(contents)
-        text = extract_text_from_pdf(uploaded_file.filename)
-        print(text)
-    return text
+app.include_router(user_router)
+app.include_router(pdf_router)
+app.include_router(credits)

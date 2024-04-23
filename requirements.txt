@@ -1,6 +1,14 @@
-python-decouple
+python-decouple==3.3
 fastapi
 uvicorn
 openai
 PyPDF2
 typing
+pydantic
+pydantic_core
+PyJWT
+cryptography==41.0.7
+pydantic[email]
+python-multipart
+pymongo
+bcrypt==3.2.2
