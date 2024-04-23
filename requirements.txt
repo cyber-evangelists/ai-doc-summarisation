@@ -7,7 +7,7 @@ typing
 pydantic
 pydantic_core
 PyJWT
-cryptography==41.0.7
+cryptography==42.0.4
 pydantic[email]
 python-multipart
 pymongo
