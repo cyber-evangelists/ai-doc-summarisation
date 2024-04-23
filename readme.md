@@ -1,4 +1,4 @@
-# main.py
+# Main.py
 
 It serves as the entry point of the application, there are 3 endpoints in this project.
 
@@ -10,11 +10,14 @@ To signup a user, on signup each user is awarded 3 credits so he is able to summ
 
 # Summarzie pdf
 
+For pdf summarization we have used chatgpt-3.5-turbo model. It reads document thoroughly and then outputs a brief but concise summary.
+
 For summarization user should first sign up and then login using the endpoint for login, then using the frontend user can easily summarize upto three pdf documents.
 
 This endpoint is protected through JWT-Auth, so its only accessible to registered users
 
-# /credits
+
+# How does credits work
 
 This enpoint is used to fetch the remaining credits of every user. Through the jwt it identifies a user and then fetch user credits.
 
